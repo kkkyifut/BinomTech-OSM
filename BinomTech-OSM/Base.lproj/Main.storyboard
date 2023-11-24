@@ -1,24 +1,129 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Map view configurations" minToolsVersion="14.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Map View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MapViewController" id="BYZ-38-t0r" customClass="MapViewController" customModule="BinomTech_OSM" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cTo-3d-CRQ">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <standardMapConfiguration key="preferredConfiguration"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vR3-gp-54y">
+                                <rect key="frame" x="318" y="109" width="59" height="59"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="vR3-gp-54y" secondAttribute="height" multiplier="1:1" id="eD5-Hh-433"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <imageReference key="image" image="ic_zoom_plus_55dp" symbolScale="large"/>
+                                </state>
+                                <connections>
+                                    <action selector="zoomInTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7ID-Ts-pYt"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fc5-3e-pgE">
+                                <rect key="frame" x="318" y="176" width="59" height="59"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="fc5-3e-pgE" secondAttribute="height" multiplier="1:1" id="EbA-ON-I3V"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <imageReference key="image" image="ic_zoom_minus_55dp" symbolScale="large"/>
+                                </state>
+                                <connections>
+                                    <action selector="zoomOutTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YcN-m9-s7Y"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zhs-ug-U5W">
+                                <rect key="frame" x="318" y="243" width="59" height="59"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="zhs-ug-U5W" secondAttribute="height" multiplier="1:1" id="Y6m-uH-86v"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <imageReference key="image" image="ic_mylocation_55dp" symbolScale="large"/>
+                                </state>
+                                <connections>
+                                    <action selector="showCurrentLocationTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="p8U-02-78P"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KrP-LP-sch" userLabel="Next Tracker Button">
+                                <rect key="frame" x="318" y="310" width="59" height="58.666666666666686"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="KrP-LP-sch" secondAttribute="height" multiplier="1:1" id="sl3-NL-2XJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <imageReference key="image" image="ic_next_tracker_55dp" symbolScale="large"/>
+                                </state>
+                                <connections>
+                                    <action selector="nextTrackerButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="L3x-X8-tqv"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="KrP-LP-sch" firstAttribute="width" secondItem="vR3-gp-54y" secondAttribute="width" id="12J-S7-C5w"/>
+                            <constraint firstAttribute="trailing" secondItem="cTo-3d-CRQ" secondAttribute="trailing" id="1q7-O0-blR"/>
+                            <constraint firstItem="cTo-3d-CRQ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="3km-Yl-Ctg"/>
+                            <constraint firstItem="vR3-gp-54y" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" constant="-16" id="6Yk-fy-dB2"/>
+                            <constraint firstItem="fc5-3e-pgE" firstAttribute="width" secondItem="vR3-gp-54y" secondAttribute="width" id="A3D-6p-SfS"/>
+                            <constraint firstItem="vR3-gp-54y" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="EwF-tb-fYO"/>
+                            <constraint firstItem="KrP-LP-sch" firstAttribute="top" secondItem="zhs-ug-U5W" secondAttribute="bottom" constant="8" id="MC2-Tf-23J"/>
+                            <constraint firstItem="zhs-ug-U5W" firstAttribute="centerX" secondItem="vR3-gp-54y" secondAttribute="centerX" id="QxT-CI-gD9"/>
+                            <constraint firstItem="fc5-3e-pgE" firstAttribute="centerX" secondItem="vR3-gp-54y" secondAttribute="centerX" id="Tia-pD-Atu"/>
+                            <constraint firstItem="zhs-ug-U5W" firstAttribute="width" secondItem="vR3-gp-54y" secondAttribute="width" id="aWe-Hl-1Qj"/>
+                            <constraint firstItem="zhs-ug-U5W" firstAttribute="top" secondItem="fc5-3e-pgE" secondAttribute="bottom" constant="8" id="hN2-eW-A1v"/>
+                            <constraint firstItem="KrP-LP-sch" firstAttribute="centerX" secondItem="vR3-gp-54y" secondAttribute="centerX" id="m0N-G9-oKY"/>
+                            <constraint firstItem="cTo-3d-CRQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="mAX-QV-Qbj"/>
+                            <constraint firstItem="vR3-gp-54y" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.15" id="mRq-nh-GWN"/>
+                            <constraint firstAttribute="bottom" secondItem="cTo-3d-CRQ" secondAttribute="bottom" id="r0L-1f-sJe"/>
+                            <constraint firstItem="fc5-3e-pgE" firstAttribute="top" secondItem="vR3-gp-54y" secondAttribute="bottom" constant="8" id="zk3-wv-1aO"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="locationButton" destination="zhs-ug-U5W" id="MUj-1P-ehA"/>
+                        <outlet property="mapView" destination="cTo-3d-CRQ" id="0zk-EP-m19"/>
+                        <outlet property="minusButton" destination="fc5-3e-pgE" id="7al-3S-25q"/>
+                        <outlet property="nextTrackerButton" destination="KrP-LP-sch" id="mfz-CG-Xe3"/>
+                        <outlet property="plusButton" destination="vR3-gp-54y" id="i6T-kO-91T"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="102" y="4"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ic_mylocation_55dp" width="73.333335876464844" height="73.333335876464844"/>
+        <image name="ic_next_tracker_55dp" width="73.333335876464844" height="73.333335876464844"/>
+        <image name="ic_zoom_minus_55dp" width="73.333335876464844" height="73.333335876464844"/>
+        <image name="ic_zoom_plus_55dp" width="73.333335876464844" height="73.333335876464844"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

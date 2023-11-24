@@ -7,23 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CC9387862B10D4C000248447 /* MapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9387852B10D4C000248447 /* MapModel.swift */; };
+		CC9387892B10D51400248447 /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9387882B10D51400248447 /* MapController.swift */; };
 		CCD64FF82B0FDB5B009A2BEE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD64FF72B0FDB5B009A2BEE /* AppDelegate.swift */; };
 		CCD64FFA2B0FDB5B009A2BEE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD64FF92B0FDB5B009A2BEE /* SceneDelegate.swift */; };
-		CCD64FFC2B0FDB5B009A2BEE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD64FFB2B0FDB5B009A2BEE /* ViewController.swift */; };
+		CCD64FFC2B0FDB5B009A2BEE /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD64FFB2B0FDB5B009A2BEE /* MapViewController.swift */; };
 		CCD64FFF2B0FDB5B009A2BEE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCD64FFD2B0FDB5B009A2BEE /* Main.storyboard */; };
 		CCD650012B0FDB5C009A2BEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCD650002B0FDB5C009A2BEE /* Assets.xcassets */; };
 		CCD650042B0FDB5C009A2BEE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCD650022B0FDB5C009A2BEE /* LaunchScreen.storyboard */; };
+		CCD6500C2B0FEB3F009A2BEE /* PopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD6500B2B0FEB3F009A2BEE /* PopupView.swift */; };
+		CCD650102B0FEC68009A2BEE /* PopupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCD6500F2B0FEC68009A2BEE /* PopupView.xib */; };
+		CCD650122B0FFCC1009A2BEE /* Extension+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD650112B0FFCC1009A2BEE /* Extension+UIColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CC9387852B10D4C000248447 /* MapModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapModel.swift; sourceTree = "<group>"; };
+		CC9387882B10D51400248447 /* MapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
 		CCD64FF42B0FDB5B009A2BEE /* BinomTech-OSM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BinomTech-OSM.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCD64FF72B0FDB5B009A2BEE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CCD64FF92B0FDB5B009A2BEE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CCD64FFB2B0FDB5B009A2BEE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CCD64FFB2B0FDB5B009A2BEE /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		CCD64FFE2B0FDB5B009A2BEE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CCD650002B0FDB5C009A2BEE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CCD650032B0FDB5C009A2BEE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CCD650052B0FDB5C009A2BEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CCD6500B2B0FEB3F009A2BEE /* PopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupView.swift; sourceTree = "<group>"; };
+		CCD6500F2B0FEC68009A2BEE /* PopupView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopupView.xib; sourceTree = "<group>"; };
+		CCD650112B0FFCC1009A2BEE /* Extension+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIColor.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +47,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CC9387842B10D4B900248447 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CC9387852B10D4C000248447 /* MapModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CC9387872B10D50B00248447 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CC9387882B10D51400248447 /* MapController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		CCD64FEB2B0FDB5B009A2BEE = {
 			isa = PBXGroup;
 			children = (
@@ -58,13 +84,42 @@
 			children = (
 				CCD64FF72B0FDB5B009A2BEE /* AppDelegate.swift */,
 				CCD64FF92B0FDB5B009A2BEE /* SceneDelegate.swift */,
-				CCD64FFB2B0FDB5B009A2BEE /* ViewController.swift */,
+				CC9387842B10D4B900248447 /* Model */,
+				CCD6500D2B0FEB45009A2BEE /* ViewController */,
+				CC9387872B10D50B00248447 /* Controller */,
+				CCD6500E2B0FEB4F009A2BEE /* Popup View */,
 				CCD64FFD2B0FDB5B009A2BEE /* Main.storyboard */,
 				CCD650002B0FDB5C009A2BEE /* Assets.xcassets */,
 				CCD650022B0FDB5C009A2BEE /* LaunchScreen.storyboard */,
 				CCD650052B0FDB5C009A2BEE /* Info.plist */,
+				CCD650132B0FFCED009A2BEE /* Helpers */,
 			);
 			path = "BinomTech-OSM";
+			sourceTree = "<group>";
+		};
+		CCD6500D2B0FEB45009A2BEE /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CCD64FFB2B0FDB5B009A2BEE /* MapViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		CCD6500E2B0FEB4F009A2BEE /* Popup View */ = {
+			isa = PBXGroup;
+			children = (
+				CCD6500B2B0FEB3F009A2BEE /* PopupView.swift */,
+				CCD6500F2B0FEC68009A2BEE /* PopupView.xib */,
+			);
+			path = "Popup View";
+			sourceTree = "<group>";
+		};
+		CCD650132B0FFCED009A2BEE /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				CCD650112B0FFCC1009A2BEE /* Extension+UIColor.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,6 +181,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CCD650042B0FDB5C009A2BEE /* LaunchScreen.storyboard in Resources */,
+				CCD650102B0FEC68009A2BEE /* PopupView.xib in Resources */,
 				CCD650012B0FDB5C009A2BEE /* Assets.xcassets in Resources */,
 				CCD64FFF2B0FDB5B009A2BEE /* Main.storyboard in Resources */,
 			);
@@ -138,8 +194,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CCD64FFC2B0FDB5B009A2BEE /* ViewController.swift in Sources */,
+				CCD64FFC2B0FDB5B009A2BEE /* MapViewController.swift in Sources */,
+				CC9387892B10D51400248447 /* MapController.swift in Sources */,
+				CCD650122B0FFCC1009A2BEE /* Extension+UIColor.swift in Sources */,
+				CCD6500C2B0FEB3F009A2BEE /* PopupView.swift in Sources */,
 				CCD64FF82B0FDB5B009A2BEE /* AppDelegate.swift in Sources */,
+				CC9387862B10D4C000248447 /* MapModel.swift in Sources */,
 				CCD64FFA2B0FDB5B009A2BEE /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
