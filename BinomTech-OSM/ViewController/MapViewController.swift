@@ -37,11 +37,11 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     @IBAction func nextTrackerButtonTapped(_ sender: UIButton) {
         if mapModel.currentAnnotationIndex < mapModel.annotations.count {
             let nextAnnotation = mapModel.annotations[mapModel.currentAnnotationIndex]
-            mapController?.mapView.selectAnnotation(nextAnnotation, animated: true)
+            mapView.selectAnnotation(nextAnnotation, animated: true)
             mapModel.currentAnnotationIndex += 1
         } else {
             if let firstAnnotation = mapModel.annotations.first {
-                mapController?.mapView.selectAnnotation(firstAnnotation, animated: true)
+                mapView.selectAnnotation(firstAnnotation, animated: true)
             }
             mapModel.currentAnnotationIndex = 1
         }
@@ -96,10 +96,15 @@ extension MapViewController: UIGestureRecognizerDelegate {
     }
     
     @objc func handleMapTap(_ gestureRecognizer: UITapGestureRecognizer) {
-        mapController?.removePopupView()
+        closePopupView()
     }
     
     @objc func handleMapPan(_ gestureRecognizer: UIPanGestureRecognizer) {
+        closePopupView()
+    }
+    
+    private func closePopupView() {
+        mapView.deselectAnnotation(mapView.selectedAnnotations.first, animated: false)
         mapController?.removePopupView()
     }
 }

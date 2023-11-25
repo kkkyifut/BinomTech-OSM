@@ -1,8 +1,8 @@
 import MapKit
 
 class MapController: NSObject {
-    let mapView: MKMapView
-    private var mapModel: MapModel
+    private let mapView: MKMapView
+    private let mapModel: MapModel
     private var popupView: PopupView?
     private let userImage = UIImage(named: "yuriy")
     private var currentSpan: MKCoordinateSpan?
@@ -19,14 +19,21 @@ class MapController: NSObject {
     }
     
     func removePopupView() {
-        self.popupView?.removeFromSuperview()
-        self.popupView = nil
+        popupView?.removeFromSuperview()
+        popupView = nil
     }
     
     func addAnnotation(at coordinate: CLLocationCoordinate2D) {
         let annotation = MKPointAnnotation()
         annotation.coordinate = coordinate
         annotation.title = ["Юрий", "Илья", "Михаил", "Иван", "Максим", "Алексей"].randomElement()!
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH:mm"
+        let currentDate = Date()
+        let formattedTime = dateFormatter.string(from: currentDate)
+        
+        annotation.subtitle = formattedTime
         mapView.addAnnotation(annotation)
         if annotation.title != mapView.userLocation.title {
             mapModel.annotations.append(annotation)
@@ -40,15 +47,15 @@ extension MapController: MKMapViewDelegate {
         
         let region = MKCoordinateRegion(center: annotation.coordinate, latitudinalMeters: 500, longitudinalMeters: 500)
         mapView.setRegion(region, animated: true)
-        removePopupView()
         
+        removePopupView()
         popupView = PopupView.instanceFromNib()
         popupView?.frame = mapView.bounds
-        popupView?.frame.origin.y = popupView!.frame.height
+        popupView?.frame.origin.y = popupView!.cardView.frame.height
         popupView?.configure(with: annotation, image: userImage!)
         mapView.addSubview(popupView!)
         
-        UIView.animate(withDuration: 0.5, delay: 0.0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.7, animations: { [weak self] in
+        UIView.animate(withDuration: 0.4, animations: { [weak self] in
             self?.popupView?.frame.origin.y = 0
         })
     }
@@ -95,21 +102,10 @@ extension MapController: MKMapViewDelegate {
                     user.image!.draw(in: CGRect(x: 15, y: 7, width: 70, height: 70))
                 }
                 
-                annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseIdentifier)
+                annotationView = OvalAnnotationView(annotation: annotation, reuseIdentifier: reuseIdentifier, title: annotation.title!!, subtitle: annotation.subtitle!)
                 annotationView!.image = resultImage
                 annotationView!.collisionMode = .circle
-                annotationView!.canShowCallout = true
-                
-                let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = "HH:mm"
-                let currentDate = Date()
-                let formattedTime = dateFormatter.string(from: currentDate)
-                let label = UILabel(frame: CGRect(x: 0, y: 0, width: 80, height: 30))
-                label.text = "GPS, \(formattedTime)"
-                label.font = .systemFont(ofSize: 15)
-                label.textColor = .gray
-                
-                annotationView?.detailCalloutAccessoryView = label
+                annotationView?.canShowCallout = false
             } else {
                 annotationView!.annotation = annotation
             }
@@ -126,11 +122,6 @@ extension MapController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
         let region = mapView.region
         limitMapZoom(with: region.span)
-    }
-    
-    func isSpanEqual(span1: MKCoordinateSpan, span2: MKCoordinateSpan) -> Bool {
-        return span1.latitudeDelta == span2.latitudeDelta &&
-        span1.longitudeDelta == span2.longitudeDelta
     }
     
     func limitMapZoom(with span: MKCoordinateSpan) {

@@ -18,6 +18,7 @@
 		CCD6500C2B0FEB3F009A2BEE /* PopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD6500B2B0FEB3F009A2BEE /* PopupView.swift */; };
 		CCD650102B0FEC68009A2BEE /* PopupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCD6500F2B0FEC68009A2BEE /* PopupView.xib */; };
 		CCD650122B0FFCC1009A2BEE /* Extension+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD650112B0FFCC1009A2BEE /* Extension+UIColor.swift */; };
+		CCE6F1352B11FB2A00042786 /* OvalAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE6F1342B11FB2A00042786 /* OvalAnnotationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		CCD6500B2B0FEB3F009A2BEE /* PopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupView.swift; sourceTree = "<group>"; };
 		CCD6500F2B0FEC68009A2BEE /* PopupView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopupView.xib; sourceTree = "<group>"; };
 		CCD650112B0FFCC1009A2BEE /* Extension+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIColor.swift"; sourceTree = "<group>"; };
+		CCE6F1342B11FB2A00042786 /* OvalAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OvalAnnotationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 				CC9387842B10D4B900248447 /* Model */,
 				CCD6500D2B0FEB45009A2BEE /* ViewController */,
 				CC9387872B10D50B00248447 /* Controller */,
+				CCE6F1332B11FB0700042786 /* View */,
 				CCD6500E2B0FEB4F009A2BEE /* Popup View */,
 				CCD64FFD2B0FDB5B009A2BEE /* Main.storyboard */,
 				CCD650002B0FDB5C009A2BEE /* Assets.xcassets */,
@@ -120,6 +123,14 @@
 				CCD650112B0FFCC1009A2BEE /* Extension+UIColor.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		CCE6F1332B11FB0700042786 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CCE6F1342B11FB2A00042786 /* OvalAnnotationView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,6 +210,7 @@
 				CCD650122B0FFCC1009A2BEE /* Extension+UIColor.swift in Sources */,
 				CCD6500C2B0FEB3F009A2BEE /* PopupView.swift in Sources */,
 				CCD64FF82B0FDB5B009A2BEE /* AppDelegate.swift in Sources */,
+				CCE6F1352B11FB2A00042786 /* OvalAnnotationView.swift in Sources */,
 				CC9387862B10D4C000248447 /* MapModel.swift in Sources */,
 				CCD64FFA2B0FDB5B009A2BEE /* SceneDelegate.swift in Sources */,
 			);

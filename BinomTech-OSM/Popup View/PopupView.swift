@@ -8,6 +8,7 @@ final class PopupView: UIView {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var showHistoryButton: UIButton!
+    @IBOutlet weak var cardView: UIView!
     
     @IBAction func showHistoryTapped(_ sender: UIButton) {
         print("showHistoryTapped")
@@ -37,9 +38,7 @@ final class PopupView: UIView {
         let currentDate = Date()
         let formattedDate = dateFormatter.string(from: currentDate)
         dateLabel.text = formattedDate
-        
-        dateFormatter.dateFormat = "HH:mm"
-        let formattedTime = dateFormatter.string(from: currentDate)
-        timeLabel.text = formattedTime
+
+        timeLabel.text = annotation.subtitle!
     }
 }
