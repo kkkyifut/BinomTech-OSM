@@ -21,4 +21,4 @@
 
 ##
 ### Пример использования приложения:
-https://github.com/kkkyifut/BinomTech-OSM/assets/81325219/ecf6a919-2918-4d2a-af46-2ebdc6def785
+https://github.com/kkkyifut/BinomTech-OSM/assets/81325219/efffe28f-6c06-45d0-ae00-7ac140b45451
