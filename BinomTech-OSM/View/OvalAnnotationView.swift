@@ -8,9 +8,9 @@ class OvalAnnotationView: MKAnnotationView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    init(annotation: MKAnnotation?, reuseIdentifier: String?, title: String?, subtitle: String?) {
+    override init(annotation: MKAnnotation?, reuseIdentifier: String?) {
         super.init(annotation: annotation, reuseIdentifier: reuseIdentifier)
-        let (title, subtitle) = self.createAnnotationTitles(title: title, subtitle: subtitle)
+        let (title, subtitle) = self.createAnnotationTitles(title: annotation?.title!!, subtitle: annotation?.subtitle!!)
         self.view = UIView(frame: CGRect(x: 60, y: 78, width: 120, height: 50))
         view.backgroundColor = .white.withAlphaComponent(0.95)
         view.layer.shadowColor = UIColor.black.cgColor

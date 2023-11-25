@@ -8,10 +8,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     private var mapModel = MapModel()
     
     @IBOutlet weak var mapView: MKMapView!
-    @IBOutlet weak var plusButton: UIButton!
-    @IBOutlet weak var minusButton: UIButton!
-    @IBOutlet weak var locationButton: UIButton!
-    @IBOutlet weak var nextTrackerButton: UIButton!
 
     @IBAction func showCurrentLocationTapped(_ sender: UIButton) {
         if let userLocation = mapView.userLocation.location {

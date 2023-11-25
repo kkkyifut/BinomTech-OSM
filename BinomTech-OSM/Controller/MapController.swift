@@ -85,31 +85,25 @@ extension MapController: MKMapViewDelegate {
             return locationView
         } else {
             let reuseIdentifier = "customPin"
-            var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseIdentifier)
+            let annotationView = OvalAnnotationView(annotation: annotation, reuseIdentifier: reuseIdentifier)
             
-            if annotationView == nil {
-                let tracker = UIImageView(image: UIImage(named: "ic_tracker_75dp"))
-                tracker.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
-                let user = UIImageView(image: userImage)
-                user.frame = CGRect(x: 0, y: 0, width: 70, height: 70)
-                user.layer.cornerRadius = user.frame.height / 2
-                user.clipsToBounds = true
-                let renderer = UIGraphicsImageRenderer(size: CGSize(width: 100, height: 100))
-                let resultImage = renderer.image { context in
-                    tracker.image!.draw(in: CGRect(x: 0, y: 0, width: 100, height: 100))
-                    let clipPath = UIBezierPath(ovalIn: CGRect(x: 15, y: 7, width: 70, height: 70))
-                    clipPath.addClip()
-                    user.image!.draw(in: CGRect(x: 15, y: 7, width: 70, height: 70))
-                }
-                
-                annotationView = OvalAnnotationView(annotation: annotation, reuseIdentifier: reuseIdentifier, title: annotation.title!!, subtitle: annotation.subtitle!)
-                annotationView!.image = resultImage
-                annotationView!.collisionMode = .circle
-                annotationView?.canShowCallout = false
-            } else {
-                annotationView!.annotation = annotation
+            let tracker = UIImageView(image: UIImage(named: "ic_tracker_75dp"))
+            tracker.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+            let user = UIImageView(image: userImage)
+            user.frame = CGRect(x: 0, y: 0, width: 70, height: 70)
+            user.layer.cornerRadius = user.frame.height / 2
+            user.clipsToBounds = true
+            let renderer = UIGraphicsImageRenderer(size: CGSize(width: 100, height: 100))
+            let resultImage = renderer.image { context in
+                tracker.image!.draw(in: CGRect(x: 0, y: 0, width: 100, height: 100))
+                let clipPath = UIBezierPath(ovalIn: CGRect(x: 15, y: 7, width: 70, height: 70))
+                clipPath.addClip()
+                user.image!.draw(in: CGRect(x: 15, y: 7, width: 70, height: 70))
             }
-            annotationView!.isUserInteractionEnabled = true
+            
+            annotationView.image = resultImage
+            annotationView.collisionMode = .circle
+            annotationView.canShowCallout = false
             
             return annotationView
         }

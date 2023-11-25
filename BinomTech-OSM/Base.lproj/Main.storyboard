@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Map view configurations" minToolsVersion="14.0"/>
@@ -22,7 +23,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                                 <standardMapConfiguration key="preferredConfiguration"/>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vR3-gp-54y">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vR3-gp-54y" userLabel="Plus Button">
                                 <rect key="frame" x="318" y="109" width="59" height="59"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="vR3-gp-54y" secondAttribute="height" multiplier="1:1" id="eD5-Hh-433"/>
@@ -37,7 +38,7 @@
                                     <action selector="zoomInTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7ID-Ts-pYt"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fc5-3e-pgE">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fc5-3e-pgE" userLabel="Minus Button">
                                 <rect key="frame" x="318" y="176" width="59" height="59"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="fc5-3e-pgE" secondAttribute="height" multiplier="1:1" id="EbA-ON-I3V"/>
@@ -52,7 +53,7 @@
                                     <action selector="zoomOutTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YcN-m9-s7Y"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zhs-ug-U5W">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zhs-ug-U5W" userLabel="Geo Button">
                                 <rect key="frame" x="318" y="243" width="59" height="59"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="zhs-ug-U5W" secondAttribute="height" multiplier="1:1" id="Y6m-uH-86v"/>
@@ -105,11 +106,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="locationButton" destination="zhs-ug-U5W" id="MUj-1P-ehA"/>
                         <outlet property="mapView" destination="cTo-3d-CRQ" id="0zk-EP-m19"/>
-                        <outlet property="minusButton" destination="fc5-3e-pgE" id="7al-3S-25q"/>
-                        <outlet property="nextTrackerButton" destination="KrP-LP-sch" id="mfz-CG-Xe3"/>
-                        <outlet property="plusButton" destination="vR3-gp-54y" id="i6T-kO-91T"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
